@@ -1,0 +1,38 @@
+{% extends 'pkiproject/index.html' %}
+
+{% block title %} PROFILE {% endblock %}
+{% load staticfiles %}
+        <link href="{% static 'pkiproject/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'pkiproject/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'pkiproject/css/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'pkiproject/css/owl.carousel.css' %}" rel="stylesheet">
+        <link href="{% static 'pkiproject/css/owl.transitions.css' %}" rel="stylesheet">
+        <link href="{% static 'pkiproject/css/prettyPhoto.css' %}" rel="stylesheet">  
+        <link href="{% static 'pkiproject/css/magnific-popup.css' %}" rel="stylesheet">  
+        <link href="{% static 'pkiproject/css/gallery-1.css' %}" rel="stylesheet">
+        <link href="{% static 'pkiproject/css/styles.css' %}" rel="stylesheet"> 
+{% block content %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                {{ field.label_tag }}: {{ field }}
+            </div>
+        {% endfor %}
+    <script src="{% static 'pkiproject/js/jquery.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/bootstrap.min.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/owl.carousel.min.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/mousescroll.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/smoothscroll.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/jquery.prettyPhoto.js'%}" type="text/javascript"></script> 
+    <script src="{% static 'pkiproject/js/jquery.inview.min.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/wow.min.js'%}" type="text/javascript"></script>
+ 
+    <script type="text/javascript" src="{% static 'pkiproject/js/jquery.isotope.min.js'%}"></script><!-- Gallery Filter -->
+    <script type="text/javascript" src="{% static 'pkiproject/js/jquery.magnific-popup.min.js'%}"></script><!-- Gallery Popup -->
+     
+    <script src="{% static 'pkiproject/js/custom-scripts.js'%}" type="text/javascript"></script>
+
+{% endblock %}

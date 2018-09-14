@@ -1,0 +1,424 @@
+{% extends 'pkiproject/layout.html' %}
+
+{% block title %} {% endblock %}
+{% block content %}
+{% load staticfiles %}
+		<body id="home">
+
+    <header id="header">
+        <nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'pkiproject:index' %}"><img src="{% static 'pkiproject/images/logo.png'%}" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll active"><a href="{% url 'pkiproject:index' %}">Home</a></li> 
+                        <li class="scroll"><a href="#services">Our Service</a></li>
+                        <li class="scroll"><a href="#about">About Us</a></li>
+                        <li class="scroll"><a href="#portfolio">Products</a></li>
+                        <li class="scroll"><a href="#our-team">Team</a></li>
+                        {% if user.is_active %}
+                        <li style="padding-left: 60px;"><a href="{% url 'pkiproject:logout' %}">Logout</a></li>
+                        {% else %}
+                        <li style="padding-left: 0px;"><a href="{% url 'pkiproject:signin' %}">SignIn</a></li>
+                        <li><a href="{% url 'pkiproject:signup' %}">SignUp</a></li>
+                        <li style="padding-left: 0px;"><a href="{% url 'pkiproject:car_form' %}">Car_Form</a></li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+       
+    </header><!--/header-->
+
+    <section id="main-slider">
+        <div class="owl-carousel">
+            <div class="item" style="background-image: url(images/slider/bg1.jpg);">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row"> 
+							<div class="carousel-caption">
+                                <div class="carousel-content">
+                                    <h2>Car Servicing</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmod.</p> 
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+             <div class="item" style="background-image: url(images/slider/bg2.jpg);">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row"> 
+							<div class="carousel-caption">
+                                <div class="carousel-content">
+                                    <h2>Quick Car Wash</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmod.</p> 
+                                </div>
+                            </div>
+							</div>
+                        </div> </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.owl-carousel-->
+    </section><!--/#main-slider--> 
+    <section id="services" >
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Our Services</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+                        <div class="media service-box">
+						<div class="hexagon">
+						  <div class="inner">              
+							  <i class="fa fa-heart-o"></i>
+						  </div>
+						</div> 
+                            <div class="media-body">
+                                <h4 class="media-heading">Car Wash</h4>
+                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+                        <div class="media service-box">
+						<div class="hexagon">
+						  <div class="inner">              
+							<i class="fa fa-line-chart"></i>
+						  </div>
+						</div>  
+                            <div class="media-body">
+                                <h4 class="media-heading">Car Servicing</h4>
+                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
+                        <div class="media service-box"> 
+								<div class="hexagon">
+						  <div class="inner">  
+                                <i class="fa fa-star-o"></i>
+						  </div>
+						</div>  
+                            <div class="media-body">
+                                <h4 class="media-heading">Car Checkup</h4>
+                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
+                        <div class="media service-box">
+                            
+								<div class="hexagon">
+						  <div class="inner">  
+                                <i class="fa fa-clock-o"></i>
+						  </div>
+						</div>  
+                            <div class="media-body">
+                                <h4 class="media-heading">Alignment</h4>
+                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+							<div class="hexagon">
+						  <div class="inner">  
+                                <i class="fa fa-paper-plane-o"></i>
+						  </div>
+						</div>   
+                            <div class="media-body">
+                                <h4 class="media-heading">Painting</h4>
+                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="500ms">
+                        <div class="media service-box">
+							<div class="hexagon">
+						  <div class="inner">  
+                                <i class="fa fa-calendar"></i>
+						  </div>
+						</div>    
+                            <div class="media-body">
+                                <h4 class="media-heading">Modifiying</h4>
+                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div>
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#services-->
+
+ <section id="about">
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">About Us</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                  <img class="img-responsive" src="images/about.png" alt="">
+                </div>
+
+                <div class="col-sm-6 wow fadeInRight">
+                    <h3 class="column-title">High Quality Process</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa semper aliquam quis mattis quam. Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
+
+                    <p>Nulla eu neque commodo, dapibus dolor eget, dictum arcu. In nec purus eu tellus consequat ultricies. Donec feugiat tempor turpis, rutrum sagittis mi venenatis at. Sed molestie lorem a blandit congue. Ut pellentesque odio quis leo volutpat, vitae vulputate felis condimentum. </p>
+
+					<p>Praesent vulputate fermentum lorem, id rhoncus sem vehicula eu. Quisque ullamcorper, orci adipiscing auctor viverra, velit arcu malesuada metus, in volutpat tellus sem at justo.</p>
+
+
+                    <a class="btn btn-primary" href="#">Learn More</a>
+
+                </div>
+            </div>
+        </div>
+    </section><!--/#about-->
+   <section id="portfolio">
+            <!-- Start Gallery 1-2 -->
+    <section id="gallery-1" data-section="gallery-1" class="data-section"  class="content-block section-wrapper gallery-1">
+    	
+    	<div class="container">
+    	
+	   <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">Products</h2>
+                <p class="text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+			<div class="editContent">
+	            <ul class="filter">
+	                <li class="active"><a href="#" data-filter="*">All</a></li>
+	                <li><a href="#" data-filter=".artwork">Cars</a></li>
+	                <li><a href="#" data-filter=".creative">Checkup</a></li>
+	                <li><a href="#" data-filter=".nature">Servicing</a></li>
+	                <li><a href="#" data-filter=".outside">Painting</a></li>
+	                <li><a href="#" data-filter=".photography">Modifiying</a></li>
+	            </ul>
+			</div>
+            <!-- /.gallery-filter -->
+            
+            <div class="row">
+                <div id="isotope-gallery-container">
+                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper artwork creative">
+                        <div class="gallery-item">
+                            <div class="gallery-thumb">
+                                <img src="images/portfolio/1.jpg" class="img-responsive" alt="1st gallery Thumb">
+                                <div class="image-overlay"></div>
+                                <a href="images/portfolio/1.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+                            </div>
+                            <div class="gallery-details">
+                            	<div class="editContent">
+	                                <h5>1st gallery Item</h5>
+                            	</div>
+                            	<div class="editContent">
+	                                <p>Nullam id dolor id nibh ultricies vehicula.</p>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.gallery-item-wrapper -->
+                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper nature outside">
+                        <div class="gallery-item">
+                            <div class="gallery-thumb">
+                                <img src="images/portfolio/2.jpg" class="img-responsive" alt="2nd gallery Thumb">
+                                <div class="image-overlay"></div>
+                                <a href="images/portfolio/2.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+                            </div>
+                            <div class="gallery-details">
+                            	<div class="editContent">
+                                	<h5>2nd gallery Item</h5>
+                            	</div>
+                            	<div class="editContent">
+                                	<p>Nullam id dolor id nibh ultricies vehicula.</p>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.gallery-item-wrapper -->
+                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper photography artwork">
+                        <div class="gallery-item">
+                            <div class="gallery-thumb">
+                                <img src="images/portfolio/3.jpg" class="img-responsive" alt="3rd gallery Thumb">
+                                <div class="image-overlay"></div>
+                                <a href="images/portfolio/3.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+                            </div>
+                            <div class="gallery-details">
+                            	<div class="editContent">
+                                	<h5>3rd gallery Item</h5>
+                            	</div>
+                            	<div class="editContent">
+                                	<p>Nullam id dolor id nibh ultricies vehicula.</p>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.gallery-item-wrapper -->
+                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper creative nature">
+                        <div class="gallery-item">
+                            <div class="gallery-thumb">
+                                <img src="images/portfolio/4.jpg" class="img-responsive" alt="4th gallery Thumb">
+                                <div class="image-overlay"></div>
+                                <a href="images/portfolio/4.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+                            </div>
+                            <div class="gallery-details">
+                            	<div class="editContent">
+                                	<h5>4th gallery Item</h5>
+                            	</div>
+                            	<div class="editContent">
+                                	<p>Nullam id dolor id nibh ultricies vehicula.</p>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.gallery-item-wrapper -->
+                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper nature">
+                        <div class="gallery-item">
+                            <div class="gallery-thumb">
+                                <img src="images/portfolio/5.jpg" class="img-responsive" alt="5th gallery Thumb">
+                                <div class="image-overlay"></div>
+                                <a href="images/portfolio/5.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+                            </div>
+                            <div class="gallery-details">
+                            	<div class="editContent">
+                                	<h5>5th gallery Item</h5>
+                            	</div>
+                            	<div class="editContent">
+                                	<p>Nullam id dolor id nibh ultricies vehicula.</p>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.gallery-item-wrapper -->
+                    <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper artwork creative">
+                        <div class="gallery-item">
+                            <div class="gallery-thumb">
+                                <img src="images/portfolio/6.jpg" class="img-responsive" alt="6th gallery Thumb">
+                                <div class="image-overlay"></div>
+                                <a href="images/portfolio/6.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+                                <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+                            </div>
+                            <div class="gallery-details">
+                            	<div class="editContent">
+                                	<h5>6th gallery Item</h5>
+                            	</div>
+                            	<div class="editContent">
+                                	<p>Nullam id dolor id nibh ultricies vehicula.</p>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- /.isotope-gallery-container -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!--// End Gallery 1-2 -->
+   </section><!--/#portfolio-->
+
+   
+   
+    <section id="our-team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Experts Team</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/01.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>John Deo</h3>
+                            <span>CEO</span>
+                        </div>  
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/02.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Mike Timobbs</h3>
+                            <span>Manager</span>
+                        </div>  
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/03.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Remo Silvaus</h3>
+                            <span>Designer</span>
+                        </div>  
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/04.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Niscal Deon</h3>
+                            <span>Engineer</span>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!--/#our-team-->
+
+    <script src="{% static 'pkiproject/js/jquery.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/bootstrap.min.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/owl.carousel.min.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/mousescroll.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/smoothscroll.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/jquery.prettyPhoto.js'%}" type="text/javascript"></script> 
+    <script src="{% static 'pkiproject/js/jquery.inview.min.js'%}" type="text/javascript"></script>
+    <script src="{% static 'pkiproject/js/wow.min.js'%}" type="text/javascript"></script>
+ 
+    <script type="text/javascript" src="{% static 'pkiproject/js/jquery.isotope.min.js'%}"></script><!-- Gallery Filter -->
+	<script type="text/javascript" src="{% static 'pkiproject/js/jquery.magnific-popup.min.js'%}"></script><!-- Gallery Popup -->
+	 
+    <script src="{% static 'pkiproject/js/custom-scripts.js'%}" type="text/javascript"></script>
+</body>
+{% endblock %}

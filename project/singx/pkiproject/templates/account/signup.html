@@ -1,0 +1,55 @@
+{% extends 'pkiproject/layout.html' %}
+{% block title %} Sign up {% endblock %}
+{% block content %}
+    {% load staticfiles %}
+    <div class="top-content">
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1>Sigh Up!</h1>
+                        <div class="description">
+                            <p>
+                                회원가입 하세요.
+                            </p>
+                        </div>
+                        <div class="top-big-link">
+                            <a class="btn btn-link-1 launch-modal" href="{% url 'pkiproject:signin' %}" data-modal-id="modal-login">Sign in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-login-label">Sign up to our site</h3>
+                <p>Enter your Information :</p>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{% url 'pkiproject:signup' %}">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <p>
+                            {{ field.label_tag }}<br>
+                        <div class="form-group">
+                        {{ field }}
+                        </div>
+                        {% if field.help_text %}
+                            <small style="color: grey">{{ field.help_text }}</small>
+                        {% endif %}
+                        {% for error in field.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                        </p>
+                    {% endfor %}
+                    <button type="submit">Sign up</button>
+                    <script type="text/javascript">document.getElementById('id_username').focus();
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
